@@ -10,6 +10,14 @@
            fetch="https://github.com/BootleggersROM-Devices"
            revision="refs/heads/queso" />
 
+  <remote name="weebs"
+	      fetch="https://github.com/BTLGxWeaboo/"
+	      revision="refs/heads/queso" />
+
+  <remote  name="gapps"
+           fetch="https://gitlab.com/EvoX"
+           revision="ten" />
+
   <remote  name="github"
            fetch="https://github.com/" />
 
@@ -17,12 +25,14 @@
            fetch="https://gitlab.com/" />
 
   <!-- General -->
-  <project path="bionic" name="bionic" remote="bootleggers" />
+  <project path="art" name="art" remote="weebs" />
+  <project path="bionic" name="bionic" remote="weebs" />
   <project path="bootable/recovery" name="bootable_recovery" remote="bootleggers" />
-  <project path="manifest" name="manifest" remote="bootleggers" />
+  <project path="libcore" name="libcore" groups="pdk" remote="weebs" />
+  <project path="manifest" name="manifest" remote="weebs" />
 
   <!-- Build -->
-  <project path="build/make" name="build" remote="bootleggers">
+  <project path="build/make" name="build" remote="weebs">
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -32,64 +42,73 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/blueprint" name="build_blueprint" remote="bootleggers" />
-  <project path="build/soong" name="build_soong" remote="bootleggers">
+  <project path="build/soong" name="build_soong" remote="weebs">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 
   <!-- Device -->
-  <project path="device/bootleg/sepolicy" name="device_bootleg_sepolicy" remote="bootleggers" />
-  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="bootleggers" />
+  <project path="device/bootleg/sepolicy" name="device_bootleg_sepolicy" remote="weebs" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="weebs" />
   <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy" remote="bootleggers" revision="queso-legacy-um"/>
   <project path="device/qcom/sepolicy-legacy" name="device_qcom_sepolicy" remote="bootleggers" revision="queso-legacy"/>
 
   <!-- External -->
   <project path="external/asus/stitchimage" name="external_asus_stitchimage" remote="bootleggers" />
   <project path="external/pulse" name="external_pulse" remote="bootleggers" />
+  <project path="external/sqlite" name="external_sqlite" groups="pdk" remote="weebs" />
   <project path="external/tinycompress" name="external_tinycompress" remote="bootleggers" />
+  <project path="external/zlib" name="external_zlib" groups="pdk" remote="weebs" />
+  <project path="external/arm-optimized-routines" name="arm-optimized-routines" remote="weebs" />
+  <project path="external/skia" name="external_skia" groups="pdk" remote="weebs" />
+  <project path="external/libpng" name="external_libpng" groups="pdk" remote="weebs" />
+  <project path="external/libjpeg-turbo" name="external_libjpeg-turbo" groups="pdk" remote="weebs" />
 
   <!-- Hardware -->
-  <project path="hardware/bootleg/interfaces" name="hardware_bootleg_interfaces" remote="bootleggers" />
+  <project path="hardware/bootleg/interfaces" name="hardware_bootleg_interfaces" remote="weebs" />
   <project path="hardware/interfaces" name="hardware_interfaces" remote="bootleggers" />
 
   <!-- Framework -->
-  <project path="frameworks/av" name="frameworks_av" remote="bootleggers" />
-  <project path="frameworks/base" name="frameworks_base" remote="bootleggers" />
+  <project path="frameworks/av" name="frameworks_av" remote="weebs" />
+  <project path="frameworks/base" name="frameworks_base" remote="weebs" />
   <project path="frameworks/native" name="frameworks_native" remote="bootleggers" />
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="weebs" />
+  <project path="frameworks/rs" name="frameworks_rs" remote="weebs" />
 
   <!-- Prebuilts -->
   <project path="prebuilts/tools-bootleg" name="prebuilts_tools-bootleg" remote="bootleggers" clone-depth="1" />
 
   <!-- Packages repos -->
-  <project path="packages/apps/BootlegDumpster" name="packages_apps_BootlegDumpster" remote="bootleggers" />
+  <project path="packages/apps/BootlegDumpster" name="packages_apps_BootlegDumpster" remote="weebs" />
   <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="bootleggers" />
   <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="bootleggers" />
   <project path="packages/apps/Jelly" name="packages_apps_Jelly" remote="bootleggers" />
   <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="bootleggers" />
   <project path="packages/apps/Phonograph" name="packages_apps_Phonograph" remote="bootleggers" />
-  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="bootleggers" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="bootleggers" />
+  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="weebs" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="weebs" />
   <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="bootleggers" />
   <project path="packages/apps/SimIcons" name="simrat39/icon-pack" remote="github" revision="master" />
   <project path="packages/apps/ShishufiedHeaders" name="packages_apps_ShishufiedHeaders" remote="bootleggers" />
   <project path="packages/apps/WallpaperPicker2" name="packages_apps_WallpaperPicker2" remote="bootleggers" />
-  <project path="packages/modules/PotatoPlugins" name="packages_modules_PotatoPlugins" remote="bootleggers" />
+  <project path="packages/modules/PotatoPlugins" name="packages_modules_PotatoPlugins" remote="weebs" />
   <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="bootleggers" />
-  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="bootleggers" />
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="weebs" />
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="bootleggers" />
   <project path="packages/services/Telephony" name="packages_services_Telephony" remote="bootleggers" />
   <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="bootleggers" />
-  <project path="packages/overlays/Shishufied" name="packages_overlays_Shishufied" remote="bootleggers" />
+  <project path="packages/overlays/Shishufied" name="packages_overlays_Shishufied" remote="weebs" />
 
   <!-- System -->
-  <project path="system/bt" name="system_bt" remote="bootleggers" />
-  <project path="system/core" name="system_core" remote="bootleggers" />
+  <project path="system/bt" name="system_bt" remote="weebs" />
+  <project path="system/core" name="system_core" remote="weebs" />
   <project path="system/netd" name="system_netd" remote="bootleggers" />
-  <project path="system/sepolicy" name="system_sepolicy" remote="bootleggers" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="weebs" />
   <project path="system/vold" name="system_vold" remote="bootleggers" />
 
   <!-- Vendor -->
-  <project path="vendor/bootleggers" name="vendor_bootleggers" remote="bootleggers" />
+  <project path="vendor/bootleggers" name="vendor_bootleggers" remote="weebs" />
   <project path="vendor/support" name="vendor_support" remote="bootleggers" />
+  <project path="vendor/gapps" name="vendor_gapps" remote="gapps" clone-depth="1" />
 
 </manifest>

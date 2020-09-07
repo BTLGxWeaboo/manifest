@@ -6,7 +6,6 @@
           revision="refs/heads/lineage-17.1" />
 
   <!-- General -->
-  <project path="art" name="android_art" remote="lineage" />
   <project path="platform_testing" name="android_platform_testing" remote="lineage" />
 
   <!-- External -->
@@ -37,7 +36,6 @@
   <project path="external/zip" name="android_external_zip" remote="lineage" />
 
   <!-- Frameworks -->
-  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="lineage" />
   <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="lineage" />
 
   <!-- Hardware -->
@@ -117,7 +115,7 @@
   <project path="hardware/qcom-caf/sdm845/display" name="android_hardware_qcom_display" remote="lineage" revision="lineage-17.1-caf-sdm845" />
   <project path="hardware/qcom-caf/sdm845/media" name="android_hardware_qcom_media" remote="lineage" revision="lineage-17.1-caf-sdm845" />
   <project path="hardware/qcom-caf/sm8150/audio" name="android_hardware_qcom_audio" remote="lineage" revision="lineage-17.1-caf-sm8150" />
-  <project path="hardware/qcom-caf/sm8150/display" name="android_hardware_qcom_display" remote="lineage" revision="lineage-17.1-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8150/display" name="hardware_qcom-caf_sm8150_display" remote="weebs" revision="ten" />
   <project path="hardware/qcom-caf/sm8150/media" name="android_hardware_qcom_media" remote="lineage" revision="lineage-17.1-caf-sm8150" />
 
   <!-- System -->
